@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import {
   Bell,
   CalendarRange,
@@ -10,21 +10,8 @@ import {
   ShieldCheck,
   Wallet,
 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import galleryPhoneHome from "@/assets/gallery-phone-home.png";
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Farhatna Mobile App — University of Bahrain" },
-      {
-        name: "description",
-        content:
-          "An elegant mobile solution that helps users discover wedding services, save favorites, manage bookings, and complete payments in one place.",
-      },
-    ],
-  }),
-  component: Index,
-});
+import heroBg from "./assets/hero-bg.jpg";
+import galleryPhoneHome from "./assets/gallery-phone-home.png";
 
 const nav = [
   { id: "abstract", label: "Abstract" },
@@ -149,7 +136,7 @@ function Section({
   id: string;
   title: string;
   eyebrow?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <section id={id} className="scroll-mt-24 px-6 py-24">
@@ -171,7 +158,7 @@ function Section({
   );
 }
 
-function Index() {
+export default function App() {
   return (
     <div className="min-h-screen bg-background font-[family-name:var(--font-body)] text-foreground">
       <header className="fixed left-0 right-0 top-6 z-50 flex justify-center px-4 py-4">
